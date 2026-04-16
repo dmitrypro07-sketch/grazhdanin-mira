@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initForm();
   initCursor();
+  initReviewsSlider();
 });
 
 // ===================================
@@ -504,4 +505,67 @@ if (header) {
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
+}
+
+// ===================================
+// СЛАЙДЕР ОТЗЫВОВ
+// ===================================
+function initReviewsSlider() {
+  const track = document.getElementById('reviewsTrack');
+  const dotsWrap = document.getElementById('reviewsDots');
+  const btnPrev = document.getElementById('reviewsPrev');
+  const btnNext = document.getElementById('reviewsNext');
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.review-card');
+  const total = cards.length;
+  let current = 0;
+
+  function getVisible() {
+    if (window.innerWidth < 480) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  }
+
+  function maxIndex() {
+    return total - getVisible();
+  }
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const count = maxIndex() + 1;
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'reviews__dot' + (i === current ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    }
+  }
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, maxIndex()));
+    const cardWidth = cards[0].offsetWidth + 24;
+    track.style.transform = `translateX(-${current * cardWidth}px)`;
+    btnPrev.disabled = current === 0;
+    btnNext.disabled = current >= maxIndex();
+    dotsWrap.querySelectorAll('.reviews__dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  btnPrev.addEventListener('click', () => goTo(current - 1));
+  btnNext.addEventListener('click', () => goTo(current + 1));
+
+  // Свайп на мобилке
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+  });
+
+  window.addEventListener('resize', () => { buildDots(); goTo(Math.min(current, maxIndex())); });
+
+  buildDots();
+  goTo(0);
 }
