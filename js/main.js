@@ -226,7 +226,7 @@ function initTyping() {
   const cursor = document.querySelector('.hero__cursor');
   if (!el) return;
 
-  const texts = ['Визы · Туры · ВНЖ', 'Финляндия · Испания · Италия', 'Быстро · Надёжно · Без отказов', 'Петрозаводск и вся Карелия'];
+  const texts = ['Виза в Китай — от 11 300₽ за 72 часа', 'Работаем после отказа консульства', 'Ручная запись в 45+ стран', 'Дистанционно из любой точки России'];
   let textIdx = 0, charIdx = 0, deleting = false;
 
   function type() {
