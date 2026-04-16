@@ -484,21 +484,6 @@ section { padding: 80px 0; }
   height: 200px;
 }
 
-.svc-card__placeholder {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #1F3638 0%, #2c4a4c 50%, #1a3028 100%);
-}
-
-.svc-card__placeholder::after {
-  content: '💬';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 64px;
-  opacity: 0.12;
-}
 
 .svc-card__body--wide {
   padding: 0 40px;
