@@ -240,7 +240,7 @@ section { padding: 80px 0; }
 }
 @keyframes labelPulse {
   0%, 100% { color: #D18F59; border-color: #D18F59; }
-  50%       { color: #7ecfcf; border-color: #7ecfcf; }
+  50%       { color: #1F3638; border-color: #1F3638; }
 }
 
 .hero__title {
