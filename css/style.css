@@ -236,7 +236,7 @@ section { padding: 80px 0; }
   border: 1.5px solid var(--color-accent);
   padding: 6px 18px;
   border-radius: 100px;
-  animation: labelPulse 3s ease-in-out infinite;
+  animation: labelPulse 5s ease-in-out infinite;
 }
 @keyframes labelPulse {
   0%, 100% { color: #D18F59; border-color: #D18F59; }
