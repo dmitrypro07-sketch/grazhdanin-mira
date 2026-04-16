@@ -569,3 +569,12 @@ function initReviewsSlider() {
   buildDots();
   goTo(0);
 }
+
+// AI-кнопка в sticky CTA (мобилка)
+const aiBtnMobile = document.getElementById('aiBtnMobile');
+if (aiBtnMobile) {
+  aiBtnMobile.addEventListener('click', () => {
+    const chat = document.getElementById('aiChat');
+    if (chat) chat.classList.toggle('open');
+  });
+}
