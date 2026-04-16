@@ -235,9 +235,9 @@ section { padding: 80px 0; }
 }
 
 .hero__title {
-  font-size: clamp(40px, 7vw, 72px);
+  font-size: clamp(30px, 4.5vw, 56px);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--color-white);
 }
 .hero__subtitle {
@@ -255,9 +255,12 @@ section { padding: 80px 0; }
 }
 
 .hero__services {
-  font-size: 18px;
+  font-size: 17px;
   color: rgba(255, 255, 255, 0.85);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  min-height: 1.5em;
+  white-space: nowrap;
 }
 
 .hero__cta {
@@ -1500,7 +1503,10 @@ section { padding: 80px 0; }
   .hero__content { gap: 14px; padding: 0 16px; }
   .btn--hero { font-size: 16px; padding: 16px 32px; }
   .hero__scroll { display: none; }
-  .hero__label { font-size: 11px; letter-spacing: 2px; padding: 5px 14px; }
+  .hero__label { font-size: 11px; letter-spacing: 1.5px; padding: 5px 12px; }
+  .hero__services { font-size: 15px; white-space: normal; text-align: center; }
+  .hero__cta { flex-direction: column; gap: 10px; }
+  .btn--hero-secondary { font-size: 14px; padding: 12px 24px; }
 
   /* Nav touch targets */
   .nav__link { padding: 14px; }
