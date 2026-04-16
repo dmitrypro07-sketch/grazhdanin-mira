@@ -435,6 +435,10 @@ section { padding: 80px 0; }
 .service-card__front--apec    { background: url('../kartochki_uslug/ATES.png') center/cover no-repeat; }
 .service-card__front--card    { background: url('../kartochki_uslug/scheta_i_karty.png') center/cover no-repeat; }
 .service-card__front--work    { background: url('../kartochki_uslug/trud_i_ucheba.png') center/cover no-repeat; }
+.service-card__front--china   { background: linear-gradient(135deg, #1a2e30 0%, #2d5a3d 50%, #c41e3a 100%); }
+.service-card__front--uk      { background: linear-gradient(135deg, #1F3638 0%, #1a3a5c 50%, #012169 100%); }
+.service-card__front--tours   { background: linear-gradient(135deg, #2a4a2e 0%, #1F3638 40%, #D18F59 100%); }
+.service-card__front--consult { background: linear-gradient(135deg, #1F3638 0%, #2c4a4c 60%, #D18F59 100%); }
 
 /* Декоративный паттерн поверх градиента */
 .service-card__front::before {
