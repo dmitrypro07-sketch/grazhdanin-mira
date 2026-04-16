@@ -1015,6 +1015,30 @@ section { padding: 80px 0; }
   color: var(--color-dark);
 }
 .form__group { margin-bottom: 16px; }
+.form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.form__consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+.form__consent span {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+.form__consent a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
 .form__input {
   width: 100%;
   padding: 14px 16px;
