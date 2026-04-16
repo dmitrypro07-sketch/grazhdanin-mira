@@ -423,17 +423,14 @@ function initCursor() {
 // ===================================
 // FLIP CARDS (тач-устройства)
 // ===================================
-document.querySelectorAll('.why-card, .service-card').forEach(card => {
+document.querySelectorAll('.why-card, .svc-card').forEach(card => {
   let touchStartY = 0;
   card.addEventListener('touchstart', e => {
     touchStartY = e.touches[0].clientY;
   }, { passive: true });
-  card.addEventListener('click', e => {
-    // На тач: проверяем, что это тап, а не скролл
-    if (e.changedTouches) return; // touchend handled below
-    card.classList.toggle('flipped');
-  });
   card.addEventListener('touchend', e => {
+    // Если клик по кнопке "Записаться" — не флипаем, даём перейти
+    if (e.target.closest('.svc-card__back-btn')) return;
     const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
     if (dy < 10) card.classList.toggle('flipped'); // только тап, не скролл
   });
