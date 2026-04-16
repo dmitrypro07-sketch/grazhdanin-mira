@@ -1919,6 +1919,7 @@ section { padding: 80px 0; }
 
   /* Услуги */
   .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .svc-card__back { padding: 16px 18px; }
   .svc-split { flex-direction: column; }
   .svc-split .svc-card { height: 180px; }
 
@@ -1989,9 +1990,14 @@ section { padding: 80px 0; }
 }
 
 @media (max-width: 480px) {
-  .svc-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .svc-card__name { font-size: 14px; }
-  .svc-card__body { padding: 12px 12px 14px; }
+  .svc-grid { grid-template-columns: 1fr; gap: 10px; }
+  .svc-card { aspect-ratio: auto; height: 200px; }
+  .svc-card__name { font-size: 16px; }
+  .svc-card__body { padding: 16px 18px 18px; }
+  .svc-card__back { padding: 16px 18px; }
+  .svc-card__back-title { font-size: 14px; margin-bottom: 8px; }
+  .svc-card__back-desc { font-size: 13px; margin-bottom: 10px; }
+  .svc-card__back-btn { padding: 8px 16px; font-size: 12px; }
   .svc-card--wide { height: auto; min-height: 160px; }
   .svc-card__grad-inner { flex-direction: column; padding: 24px; gap: 16px; text-align: center; }
   .svc-card__grad-icon { font-size: 36px; }
