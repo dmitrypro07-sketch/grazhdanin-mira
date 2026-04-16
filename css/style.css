@@ -1992,6 +1992,8 @@ section { padding: 80px 0; }
 @media (max-width: 480px) {
   .svc-grid { grid-template-columns: 1fr; gap: 10px; }
   .svc-card { aspect-ratio: auto; height: 200px; }
+  .svc-split { display: flex; flex-direction: column; gap: 10px; }
+  .svc-split .svc-card { height: 180px; flex: none; width: 100%; }
   .svc-card__name { font-size: 16px; }
   .svc-card__body { padding: 16px 18px 18px; }
   .svc-card__back { padding: 16px 18px; }
