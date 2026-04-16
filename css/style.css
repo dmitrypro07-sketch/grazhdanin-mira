@@ -1404,6 +1404,16 @@ section { padding: 80px 0; }
   .toast-container { bottom: 80px; right: 12px; max-width: calc(100vw - 24px); }
 }
 
+/* Скрываем кнопки когда чат открыт */
+.float-social {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.float-social--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(20px);
+}
+
 /* AI ЧАТ */
 .ai-chat {
   position: fixed;

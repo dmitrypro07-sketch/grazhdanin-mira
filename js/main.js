@@ -487,8 +487,19 @@ document.querySelectorAll('.why-card, .service-card').forEach(card => {
     setTimeout(() => addMessage(getBotAnswer(text), false), 600);
   }
 
-  btn.addEventListener('click', () => chat.classList.toggle('open'));
-  closeBtn.addEventListener('click', () => chat.classList.remove('open'));
+  const floatSocial = document.querySelector('.float-social');
+
+  function openChat() {
+    chat.classList.add('open');
+    if (floatSocial) floatSocial.classList.add('float-social--hidden');
+  }
+  function closeChat() {
+    chat.classList.remove('open');
+    if (floatSocial) floatSocial.classList.remove('float-social--hidden');
+  }
+
+  btn.addEventListener('click', () => chat.classList.contains('open') ? closeChat() : openChat());
+  closeBtn.addEventListener('click', closeChat);
   sendBtn.addEventListener('click', () => sendMessage(input.value));
   input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(input.value); });
 
@@ -578,3 +589,4 @@ if (aiBtnMobile) {
     if (chat) chat.classList.toggle('open');
   });
 }
+
