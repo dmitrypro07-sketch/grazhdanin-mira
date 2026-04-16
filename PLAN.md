@@ -72,6 +72,10 @@
 - [x] meta robots: index, follow
 - [x] rel="noopener noreferrer" на внешних ссылках
 - [x] Все якорные ссылки выверены (#application для формы, #contacts для карты)
+- [x] Соцсети обновлены: Telegram @VizaTatiana, VK vk.ru/viza_petrozavodsk
+- [x] Логотип в шапке — пропорции сохранены (width:auto)
+- [x] Меню z-index исправлен (ссылки кликабельны поверх overlay)
+- [x] Фон hero сдвинут (самолёт виден целиком)
 - [ ] Подключить реальный бэкенд формы (Telegram-бот + Google Sheets)
 - [ ] Заменить OpenStreetMap на Яндекс.Карты (после деплоя)
 - [ ] Добавить sitemap.xml

@@ -97,9 +97,9 @@ Vercel задеплоит автоматически после пуша.
 ## Контакты (реальные данные)
 - Телефон: +7 (902) 770-10-10
 - Адрес: Петрозаводск, ул. Кирова 5, эт. 2, офис 210
-- Telegram: @denisov_visa
+- Telegram: @VizaTatiana
 - Max: vk.me/+79027701010
-- VK: vk.com/viza_petrozavodsk
+- VK: vk.ru/viza_petrozavodsk
 
 ## Стиль общения
 - Михалыч — владелец проекта
