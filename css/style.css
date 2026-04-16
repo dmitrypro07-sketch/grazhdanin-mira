@@ -115,7 +115,7 @@ section { padding: 80px 0; }
   z-index: 100;
   background: var(--color-white);
   box-shadow: 0 2px 12px rgba(31, 54, 56, 0.08);
-  padding: 0;
+  padding: 6px 0;
 }
 .header__inner {
   display: flex;
@@ -123,7 +123,7 @@ section { padding: 80px 0; }
   justify-content: space-between;
   gap: 24px;
 }
-.header__logo img { height: 56px; }
+.header__logo img { height: 68px; }
 .nav {
   display: flex;
   align-items: center;
@@ -246,7 +246,7 @@ section { padding: 80px 0; }
 }
 .hero__subtitle {
   font-size: 15px;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.82);
   max-width: 500px;
   text-align: center;
   line-height: 1.6;
@@ -482,9 +482,9 @@ section { padding: 80px 0; }
 }
 
 .svc-card__back-desc {
-  font-size: 13px;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.6;
+  font-size: 14px;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.55;
   flex: 1;
   margin: 0 0 14px;
 }
@@ -1899,17 +1899,20 @@ section { padding: 80px 0; }
 
   /* Услуги */
   .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-/* Hero */
+  .svc-split { flex-direction: column; }
+  .svc-split .svc-card { height: 180px; }
+
+  /* Hero */
   .hero__title { font-size: 38px; }
   .hero__stats { display: none; }
   .hero__subtitle { font-size: 14px; }
   .hero__content { gap: 14px; padding: 0 16px; }
-  .btn--hero { font-size: 16px; padding: 16px 32px; }
+  .btn--hero { font-size: 16px; padding: 16px 32px; width: 100%; max-width: 320px; }
   .hero__scroll { display: none; }
   .hero__label { font-size: 11px; letter-spacing: 1.5px; padding: 5px 12px; }
   .hero__services { font-size: 15px; white-space: normal; text-align: center; }
-  .hero__cta { flex-direction: column; gap: 10px; }
-  .btn--hero-secondary { font-size: 14px; padding: 12px 24px; }
+  .hero__cta { flex-direction: column; gap: 10px; align-items: center; }
+  .btn--hero-secondary { font-size: 14px; padding: 12px 24px; width: 100%; max-width: 320px; }
 
   /* Nav touch targets */
   .nav__link { padding: 14px; }
@@ -1951,7 +1954,7 @@ section { padding: 80px 0; }
   .about__content { padding-bottom: 0; }
 
   /* Лого */
-  .header__logo img { height: 52px; }
+  .header__logo img { height: 60px; }
 
   /* Отступ снизу под sticky CTA */
   body { padding-bottom: 64px; }
