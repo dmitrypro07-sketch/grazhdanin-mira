@@ -477,68 +477,20 @@ section { padding: 80px 0; }
   letter-spacing: 0.3px;
 }
 
-/* Широкая карточка (заглушка) */
+/* Широкая карточка */
 .svc-card--wide {
   grid-column: 1 / -1;
   aspect-ratio: auto;
-  height: 200px;
+  height: 260px;
 }
 
-
-.svc-card__body--wide {
-  padding: 0 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  top: 0;
-  bottom: 0;
-  gap: 40px;
+.svc-card--wide .svc-card__name {
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
-.svc-card__wide-content {
-  flex: 1;
-}
-
-.svc-card__wide-content .svc-card__name {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.svc-card__desc {
-  font-size: 14px;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.svc-card__wide-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.svc-card__price-big {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--color-accent);
-}
-
-.svc-card__cta-btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background: var(--color-accent);
-  color: var(--color-dark);
-  font-weight: 700;
-  font-size: 14px;
-  border-radius: 100px;
-  transition: var(--transition);
-}
-
-.svc-card--wide:hover .svc-card__cta-btn {
-  background: #e8a86a;
-  transform: translateY(-2px);
+.svc-card--wide .svc-card__price {
+  font-size: 15px;
 }
 
 /* Старые flip-карточки (оставлены для совместимости) */
@@ -1636,12 +1588,7 @@ section { padding: 80px 0; }
 
   /* Услуги */
   .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .svc-card__body--wide { flex-direction: column; align-items: flex-start; padding: 24px; gap: 16px; }
-  .svc-card__wide-cta { flex-direction: row; align-items: center; gap: 20px; }
-  .svc-card__wide-content .svc-card__name { font-size: 18px; }
-  .svc-card__desc { font-size: 13px; }
-
-  /* Hero */
+/* Hero */
   .hero__title { font-size: 38px; }
   .hero__stats { display: none; }
   .hero__subtitle { font-size: 14px; }
@@ -1707,7 +1654,7 @@ section { padding: 80px 0; }
   .svc-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .svc-card__name { font-size: 14px; }
   .svc-card__body { padding: 12px 12px 14px; }
-  .svc-card--wide { height: auto; min-height: 160px; }
+  .svc-card--wide { height: 200px; }
   .hero__title { font-size: 30px; }
   .stat__divider { width: 40px; height: 1px; }
   .countries__grid .country-card { flex: 0 0 calc((100% - 16px) / 2); min-width: unset; max-width: unset; }
