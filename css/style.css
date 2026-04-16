@@ -481,16 +481,78 @@ section { padding: 80px 0; }
 .svc-card--wide {
   grid-column: 1 / -1;
   aspect-ratio: auto;
-  height: 260px;
+  height: 200px;
 }
 
-.svc-card--wide .svc-card__name {
-  font-size: 24px;
+/* Градиентная карточка */
+.svc-card--gradient {
+  background: linear-gradient(135deg, #1F3638 0%, #2a4a4c 40%, #1a3028 70%, #243830 100%);
+}
+
+.svc-card__grad-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0 48px;
+  z-index: 2;
+}
+
+.svc-card__grad-icon {
+  font-size: 52px;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.svc-card__grad-text {
+  flex: 1;
+}
+
+.svc-card__grad-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
   margin-bottom: 8px;
+  line-height: 1.2;
 }
 
-.svc-card--wide .svc-card__price {
-  font-size: 15px;
+.svc-card__grad-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.svc-card__grad-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.svc-card__grad-price {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.svc-card__grad-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--color-accent);
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 100px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.svc-card--gradient:hover .svc-card__grad-btn {
+  background: #e8a86a;
+  transform: translateY(-2px);
 }
 
 /* Старые flip-карточки (оставлены для совместимости) */
@@ -1654,7 +1716,12 @@ section { padding: 80px 0; }
   .svc-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .svc-card__name { font-size: 14px; }
   .svc-card__body { padding: 12px 12px 14px; }
-  .svc-card--wide { height: 200px; }
+  .svc-card--wide { height: auto; min-height: 160px; }
+  .svc-card__grad-inner { flex-direction: column; padding: 24px; gap: 16px; text-align: center; }
+  .svc-card__grad-icon { font-size: 36px; }
+  .svc-card__grad-title { font-size: 18px; }
+  .svc-card__grad-cta { flex-direction: row; gap: 20px; }
+  .svc-card__grad-price { font-size: 24px; }
   .hero__title { font-size: 30px; }
   .stat__divider { width: 40px; height: 1px; }
   .countries__grid .country-card { flex: 0 0 calc((100% - 16px) / 2); min-width: unset; max-width: unset; }
