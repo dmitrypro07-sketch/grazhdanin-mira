@@ -319,10 +319,16 @@ function initForm() {
 
     // Имитация отправки (здесь подключить реальный бэкенд)
     setTimeout(() => {
-      showToast('Заявка отправлена! Перезвоним в течение 15 минут ✈️', 'success');
+      showToast('Заявка принята! Перезвоним в течение 15 минут 📞', 'success');
       form.reset();
-      btn.textContent = 'Отправить заявку';
+      btn.textContent = 'Отправить заявку ✈️';
       btn.disabled = false;
+      // Показываем подтверждение прямо в форме
+      const confirm = document.createElement('p');
+      confirm.style.cssText = 'color:#4ade80;text-align:center;font-weight:600;margin-top:12px;font-size:15px';
+      confirm.textContent = '✅ Заявка отправлена — ждите звонка!';
+      form.appendChild(confirm);
+      setTimeout(() => confirm.remove(), 5000);
     }, 1000);
   });
 }
