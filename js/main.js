@@ -322,29 +322,44 @@ function initFAQ() {
 // ===================================
 // 12. ФОРМА + TOAST
 // ===================================
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzTLaxdxJUQbeUMmw_HEJH4X8N5T7HnLtQ2i6IJpF02H-2juHV9O62vSIoGrwx2ND7hcA/exec';
+
 function initForm() {
   const form = document.getElementById('form');
   if (!form) return;
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Отправляем...';
     btn.disabled = true;
 
-    // Имитация отправки (здесь подключить реальный бэкенд)
-    setTimeout(() => {
+    const data = {
+      name:    form.querySelector('[name="name"]').value.trim(),
+      phone:   form.querySelector('[name="phone"]').value.trim(),
+      service: form.querySelector('[name="service"]').value
+    };
+
+    try {
+      await fetch(SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
       showToast('Заявка принята! Перезвоним в течение 15 минут 📞', 'success');
       form.reset();
-      btn.textContent = 'Отправить заявку ✈️';
-      btn.disabled = false;
-      // Показываем подтверждение прямо в форме
       const confirm = document.createElement('p');
       confirm.style.cssText = 'color:#4ade80;text-align:center;font-weight:600;margin-top:12px;font-size:15px';
       confirm.textContent = '✅ Заявка отправлена — ждите звонка!';
       form.appendChild(confirm);
       setTimeout(() => confirm.remove(), 5000);
-    }, 1000);
+    } catch {
+      showToast('Ошибка отправки. Позвоните нам: +7 (902) 770-71-11', 'error');
+    } finally {
+      btn.textContent = 'Отправить заявку ✈️';
+      btn.disabled = false;
+    }
   });
 }
 
