@@ -40,16 +40,29 @@ function initMobileMenu() {
   const nav = document.getElementById('nav');
   if (!burger || !nav) return;
 
+  // Создаём overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'nav-overlay';
+  document.body.appendChild(overlay);
+
+  function openMenu() {
+    nav.classList.add('open');
+    burger.classList.add('active');
+    overlay.classList.add('active');
+  }
+  function closeMenu() {
+    nav.classList.remove('open');
+    burger.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+
   burger.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    burger.classList.toggle('active');
+    nav.classList.contains('open') ? closeMenu() : openMenu();
   });
+  overlay.addEventListener('click', closeMenu);
 
   nav.querySelectorAll('.nav__link').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      burger.classList.remove('active');
-    });
+    link.addEventListener('click', closeMenu);
   });
 }
 
@@ -138,6 +151,7 @@ function initCounters() {
 // 6. ЧАСТИЦЫ на canvas в hero
 // ===================================
 function initParticles() {
+  if (window.innerWidth < 768) return; // отключаем на мобилке
   const canvas = document.getElementById('particles');
   if (!canvas) return;
 
@@ -409,8 +423,18 @@ function initCursor() {
 // FLIP CARDS (тач-устройства)
 // ===================================
 document.querySelectorAll('.why-card, .service-card').forEach(card => {
-  card.addEventListener('click', () => {
+  let touchStartY = 0;
+  card.addEventListener('touchstart', e => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  card.addEventListener('click', e => {
+    // На тач: проверяем, что это тап, а не скролл
+    if (e.changedTouches) return; // touchend handled below
     card.classList.toggle('flipped');
+  });
+  card.addEventListener('touchend', e => {
+    const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+    if (dy < 10) card.classList.toggle('flipped'); // только тап, не скролл
   });
 });
 
