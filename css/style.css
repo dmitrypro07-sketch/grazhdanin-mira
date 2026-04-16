@@ -183,7 +183,7 @@ section { padding: 80px 0; }
   text-align: center;
   color: var(--color-white);
   overflow: hidden;
-  background: url('../zero-blok.png') center 30%/cover no-repeat var(--color-dark);
+  background: url('../zero-blok.png') center 10%/cover no-repeat var(--color-dark);
 }
 
 /* Видео-фон */
