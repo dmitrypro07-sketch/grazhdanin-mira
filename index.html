@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Визовый центр Гражданин мира в Петрозаводске — оформляем визы в Европу, Азию, США. 98% одобрений, 10+ лет опыта, консультация бесплатно. Карелия и СЗФО.">
+  <title>Визовый центр Гражданин мира — оформление виз в Петрозаводске и Карелии</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo">
+        <img src="img/logo/logo-horizontal.png" alt="Визовый центр Гражданин мира" height="48">
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#services" class="nav__link">Услуги</a>
+        <a href="#about" class="nav__link">О нас</a>
+        <a href="#countries" class="nav__link">Страны</a>
+        <a href="#reviews" class="nav__link">Отзывы</a>
+        <a href="#faq" class="nav__link">FAQ</a>
+        <a href="#application" class="nav__link nav__link--cta">Оставить заявку</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <!-- Частицы -->
+    <canvas class="hero__particles" id="particles"></canvas>
+    <!-- Видео-фон -->
+    <video class="hero__video" autoplay muted loop playsinline>
+      <!-- <source src="img/hero-bg.mp4" type="video/mp4"> -->
+    </video>
+    <div class="hero__overlay"></div>
+
+    <!-- Плавающие флаги -->
+    <div class="hero__floats" aria-hidden="true">
+      <img class="float-item" loading="lazy" src="https://flagcdn.com/48x36/fi.png" alt="">
+      <img class="float-item" loading="lazy" src="https://flagcdn.com/48x36/es.png" alt="">
+      <img class="float-item" loading="lazy" src="https://flagcdn.com/48x36/de.png" alt="">
+      <img class="float-item" loading="lazy" src="https://flagcdn.com/48x36/it.png" alt="">
+      <img class="float-item" loading="lazy" src="https://flagcdn.com/48x36/fr.png" alt="">
+      <img class="float-item" loading="lazy" src="https://flagcdn.com/48x36/cn.png" alt="">
+      <img class="float-item" loading="lazy" src="https://flagcdn.com/48x36/ae.png" alt="">
+      <img class="float-item" loading="lazy" src="https://flagcdn.com/48x36/jp.png" alt="">
+    </div>
+
+    <div class="hero__content">
+      <span class="hero__label">ВИЗОВЫЙ ЦЕНТР В ПЕТРОЗАВОДСКЕ · КАРЕЛИЯ</span>
+      <h1 class="hero__title">Оформим визу<br><em>без отказов</em></h1>
+      <p class="hero__subtitle">Визовый центр «Гражданин мира» — визы в Европу, ВНЖ, загранпаспорта. Петрозаводск, ул. Кирова 5.</p>
+      <p class="hero__services">
+        <span class="hero__typed"></span><span class="hero__cursor">|</span>
+      </p>
+      <a href="#application" class="btn btn--primary btn--hero">Получить консультацию</a>
+      <a href="#services" class="hero__scroll">Узнать об услугах ↓</a>
+    </div>
+
+    <div class="hero__stats">
+      <div class="stat">
+        <span class="stat__num" data-count="10">10</span><span class="stat__num-suffix">+</span>
+        <span class="stat__label">лет работы</span>
+      </div>
+      <div class="stat__divider"></div>
+      <div class="stat">
+        <span class="stat__num" data-count="5000">5 000</span><span class="stat__num-suffix">+</span>
+        <span class="stat__label">клиентов</span>
+      </div>
+      <div class="stat__divider"></div>
+      <div class="stat">
+        <span class="stat__num" data-count="98">98</span><span class="stat__num-suffix">%</span>
+        <span class="stat__label">одобрений</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <!-- Набор 1 -->
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/fi.png" alt=""> Финляндия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/es.png" alt=""> Испания</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/it.png" alt=""> Италия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/de.png" alt=""> Германия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/fr.png" alt=""> Франция</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/gr.png" alt=""> Греция</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/cz.png" alt=""> Чехия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/ae.png" alt=""> ОАЭ</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/th.png" alt=""> Таиланд</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/cn.png" alt=""> Китай</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/jp.png" alt=""> Япония</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/tr.png" alt=""> Турция</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/pt.png" alt=""> Португалия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/at.png" alt=""> Австрия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/nl.png" alt=""> Нидерланды</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/se.png" alt=""> Швеция</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/us.png" alt=""> США</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/gb.png" alt=""> Великобритания</span>
+      <span class="ticker__sep">✈</span>
+      <!-- Набор 2 (дубль для бесконечности) -->
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/fi.png" alt=""> Финляндия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/es.png" alt=""> Испания</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/it.png" alt=""> Италия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/de.png" alt=""> Германия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/fr.png" alt=""> Франция</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/gr.png" alt=""> Греция</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/cz.png" alt=""> Чехия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/ae.png" alt=""> ОАЭ</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/th.png" alt=""> Таиланд</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/cn.png" alt=""> Китай</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/jp.png" alt=""> Япония</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/tr.png" alt=""> Турция</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/pt.png" alt=""> Португалия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/at.png" alt=""> Австрия</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/nl.png" alt=""> Нидерланды</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/se.png" alt=""> Швеция</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/us.png" alt=""> США</span>
+      <span class="ticker__item"><img src="https://flagcdn.com/24x18/gb.png" alt=""> Великобритания</span>
+      <span class="ticker__sep">✈</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title reveal">Наши услуги</h2>
+      <p class="section-subtitle reveal">Помогаем с визами, турами и видом на жительство — под ключ</p>
+      <div class="services__grid">
+
+        <div class="service-card">
+          <div class="service-card__inner">
+            <div class="service-card__front service-card__front--visa">
+              <div class="service-card__front-icon">🛂</div>
+              <h3 class="service-card__front-title">Визы всех типов</h3>
+              <span class="service-card__hint">Наведи, чтобы узнать →</span>
+            </div>
+            <div class="service-card__back">
+              <div class="service-card__icon">🛂</div>
+              <h3 class="service-card__title">Визы всех типов</h3>
+              <p class="service-card__text">Туристические, деловые, рабочие, студенческие, гостевые. Шенген, Азия, Америка и другие страны.</p>
+              <span class="service-card__price">от 10 000 ₽</span>
+              <a href="#application" class="btn btn--primary service-card__btn">Подать заявку</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__inner">
+            <div class="service-card__front service-card__front--vnj">
+              <div class="service-card__front-icon">🏠</div>
+              <h3 class="service-card__front-title">ВНЖ и Гражданство</h3>
+              <span class="service-card__hint">Наведи, чтобы узнать →</span>
+            </div>
+            <div class="service-card__back">
+              <div class="service-card__icon">🏠</div>
+              <h3 class="service-card__title">ВНЖ и Гражданство</h3>
+              <p class="service-card__text">Вид на жительство или второе гражданство. Безвизовый режим до 170 стран, без отказа от российского паспорта.</p>
+              <span class="service-card__price">от 650 000 ₽</span>
+              <a href="#application" class="btn btn--primary service-card__btn">Узнать подробнее</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__inner">
+            <div class="service-card__front service-card__front--passport">
+              <div class="service-card__front-icon">📘</div>
+              <h3 class="service-card__front-title">Загранпаспорт</h3>
+              <span class="service-card__hint">Наведи, чтобы узнать →</span>
+            </div>
+            <div class="service-card__back">
+              <div class="service-card__icon">📘</div>
+              <h3 class="service-card__title">Загранпаспорт</h3>
+              <p class="service-card__text">Оформление загранпаспорта от 5 дней. Ускоренное оформление без лишних очередей.</p>
+              <span class="service-card__price">45 000 ₽</span>
+              <a href="#application" class="btn btn--primary service-card__btn">Подать заявку</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__inner">
+            <div class="service-card__front service-card__front--apec">
+              <div class="service-card__front-icon">🌏</div>
+              <h3 class="service-card__front-title">Карта АТЭС</h3>
+              <span class="service-card__hint">Наведи, чтобы узнать →</span>
+            </div>
+            <div class="service-card__back">
+              <div class="service-card__icon">🌏</div>
+              <h3 class="service-card__title">Карта АТЭС</h3>
+              <p class="service-card__text">Замена визы в 16 странах Азии и Тихоокеанского региона. Срок действия 5 лет, многократный въезд без биометрии.</p>
+              <span class="service-card__price">85 000 ₽</span>
+              <a href="#application" class="btn btn--primary service-card__btn">Узнать подробнее</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__inner">
+            <div class="service-card__front service-card__front--card">
+              <div class="service-card__front-icon">💳</div>
+              <h3 class="service-card__front-title">Карта иностранного банка</h3>
+              <span class="service-card__hint">Наведи, чтобы узнать →</span>
+            </div>
+            <div class="service-card__back">
+              <div class="service-card__icon">💳</div>
+              <h3 class="service-card__title">Карта иностранного банка</h3>
+              <p class="service-card__text">Оформление банковских карт зарубежных банков для международных операций и поездок.</p>
+              <span class="service-card__price">38 000 ₽</span>
+              <a href="#application" class="btn btn--primary service-card__btn">Узнать подробнее</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__inner">
+            <div class="service-card__front service-card__front--work">
+              <div class="service-card__front-icon">💼</div>
+              <h3 class="service-card__front-title">Трудоустройство и учёба</h3>
+              <span class="service-card__hint">Наведи, чтобы узнать →</span>
+            </div>
+            <div class="service-card__back">
+              <div class="service-card__icon">💼</div>
+              <h3 class="service-card__title">Трудоустройство и учёба</h3>
+              <p class="service-card__text">Помощь в трудоустройстве за рубежом и поступлении в иностранные учебные заведения. Страховка от 500 ₽.</p>
+              <span class="service-card__price">по договорённости</span>
+              <a href="#application" class="btn btn--primary service-card__btn">Обсудить</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="how" id="how">
+    <div class="container">
+      <h2 class="section-title">Как мы работаем</h2>
+      <p class="section-subtitle">Всего 4 простых шага — и виза у вас в руках</p>
+      <div class="how__steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <h3 class="step__title">Заявка</h3>
+          <p class="step__text">Оставляете заявку онлайн или звоните. Менеджер перезвонит в течение 15 минут.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step">
+          <div class="step__num">2</div>
+          <h3 class="step__title">Консультация</h3>
+          <p class="step__text">Бесплатно разбираем вашу ситуацию, подбираем тип визы и рассказываем какие документы нужны.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step">
+          <div class="step__num">3</div>
+          <h3 class="step__title">Документы</h3>
+          <p class="step__text">Помогаем собрать и проверить все документы. Заполняем анкету, записываем на подачу.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step">
+          <div class="step__num">4</div>
+          <h3 class="step__title">Виза готова</h3>
+          <p class="step__text">Получаете визу и отправляетесь в путешествие. Мы всегда на связи если возникнут вопросы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why" id="why">
+    <div class="container">
+      <h2 class="section-title">Почему выбирают нас</h2>
+      <div class="why__grid">
+
+        <div class="why-card">
+          <div class="why-card__inner">
+            <div class="why-card__front">
+              <div class="why-card__num">10+</div>
+              <div class="why-card__icon">🏆</div>
+              <h3 class="why-card__title">лет опыта</h3>
+              <span class="why-card__hint">Нажмите, чтобы узнать больше</span>
+            </div>
+            <div class="why-card__back">
+              <div class="why-card__icon">🏆</div>
+              <h3 class="why-card__title">10+ лет опыта</h3>
+              <p class="why-card__text">Работаем с 2014 года. Знаем специфику каждого консульства и помогаем даже в самых сложных случаях.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__inner">
+            <div class="why-card__front">
+              <div class="why-card__num">98%</div>
+              <div class="why-card__icon">✅</div>
+              <h3 class="why-card__title">одобрений</h3>
+              <span class="why-card__hint">Нажмите, чтобы узнать больше</span>
+            </div>
+            <div class="why-card__back">
+              <div class="why-card__icon">✅</div>
+              <h3 class="why-card__title">98% одобрений</h3>
+              <p class="why-card__text">Тщательно проверяем документы перед подачей. Минимальный процент отказов среди визовых центров Карелии.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__inner">
+            <div class="why-card__front">
+              <div class="why-card__num">3</div>
+              <div class="why-card__icon">⚡</div>
+              <h3 class="why-card__title">дня срочно</h3>
+              <span class="why-card__hint">Нажмите, чтобы узнать больше</span>
+            </div>
+            <div class="why-card__back">
+              <div class="why-card__icon">⚡</div>
+              <h3 class="why-card__title">Срочное оформление</h3>
+              <p class="why-card__text">Нужна виза срочно? Оформим в ускоренном режиме. Виза за 3 рабочих дня — это реально.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__inner">
+            <div class="why-card__front">
+              <div class="why-card__num">№1</div>
+              <div class="why-card__icon">📍</div>
+              <h3 class="why-card__title">в Петрозаводске</h3>
+              <span class="why-card__hint">Нажмите, чтобы узнать больше</span>
+            </div>
+            <div class="why-card__back">
+              <div class="why-card__icon">📍</div>
+              <h3 class="why-card__title">Местный центр</h3>
+              <p class="why-card__text">Мы в Петрозаводске. Знаем местные особенности. Не нужно ехать в Москву или Санкт-Петербург.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__inner">
+            <div class="why-card__front">
+              <div class="why-card__num">1:1</div>
+              <div class="why-card__icon">💬</div>
+              <h3 class="why-card__title">личный менеджер</h3>
+              <span class="why-card__hint">Нажмите, чтобы узнать больше</span>
+            </div>
+            <div class="why-card__back">
+              <div class="why-card__icon">💬</div>
+              <h3 class="why-card__title">Личный менеджер</h3>
+              <p class="why-card__text">Каждому клиенту назначается персональный менеджер. Отвечаем в Max и Telegram — быстро и по делу.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__inner">
+            <div class="why-card__front">
+              <div class="why-card__num">100%</div>
+              <div class="why-card__icon">🔒</div>
+              <h3 class="why-card__title">гарантия</h3>
+              <span class="why-card__hint">Нажмите, чтобы узнать больше</span>
+            </div>
+            <div class="why-card__back">
+              <div class="why-card__icon">🔒</div>
+              <h3 class="why-card__title">Гарантия результата</h3>
+              <p class="why-card__text">Если откажут — вернём деньги за наши услуги. Работаем только официальными каналами.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="why__cta">
+        <a href="#application" class="btn btn--primary">Получить бесплатную консультацию</a>
+        <a href="tel:+79027701010" class="btn btn--outline">+7 (902) 770-10-10</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+
+      <div class="about__photo">
+        <div class="about__photo-wrap">
+          <img src="img/about-photo.jpg" alt="Александр Денисов — основатель Гражданин мира" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="about__photo-placeholder">
+            <span>А</span>
+          </div>
+        </div>
+        <div class="about__badge">
+          <span class="about__badge-num">10+</span>
+          <span class="about__badge-text">лет в визовом бизнесе</span>
+        </div>
+      </div>
+
+      <div class="about__content">
+        <span class="hero__label" style="margin-bottom:16px;display:inline-block">О КОМПАНИИ</span>
+        <h2 class="section-title" style="text-align:left;margin-bottom:16px">Гражданин мира —<br>ваш надёжный партнёр</h2>
+        <p class="about__text">Мы помогаем жителям Петрозаводска и всей Карелии открывать мир — оформляем визы, туры, загранпаспорта и ВНЖ уже более 10 лет. За это время через наш офис прошли тысячи семей, студентов и бизнесменов.</p>
+        <p class="about__text">Компанию основал <strong>Александр Денисов</strong> — эксперт в международном праве и визовом консалтинге. Мы не просто заполняем бумаги — мы берём на себя всё: от консультации до получения визы.</p>
+
+        <div class="about__facts">
+          <div class="about__fact">
+            <span class="about__fact-num">5 000+</span>
+            <span class="about__fact-label">клиентов получили визы</span>
+          </div>
+          <div class="about__fact">
+            <span class="about__fact-num">50+</span>
+            <span class="about__fact-label">стран в нашей практике</span>
+          </div>
+          <div class="about__fact">
+            <span class="about__fact-num">98%</span>
+            <span class="about__fact-label">одобрений с первого раза</span>
+          </div>
+        </div>
+
+        <a href="#application" class="btn btn--primary" style="margin-top:8px">Получить консультацию</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COUNTRIES -->
+  <section class="countries" id="countries">
+    <div class="container">
+      <h2 class="section-title">Популярные направления</h2>
+      <p class="section-subtitle">Оформляем визы в 50+ стран мира</p>
+      <div class="countries__grid">
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/fi.png" alt="Финляндия">
+          <span class="country-card__name">Финляндия</span>
+          <span class="country-card__price">от 4 000 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/es.png" alt="Испания">
+          <span class="country-card__name">Испания</span>
+          <span class="country-card__price">от 5 000 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/it.png" alt="Италия">
+          <span class="country-card__name">Италия</span>
+          <span class="country-card__price">от 5 000 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/de.png" alt="Германия">
+          <span class="country-card__name">Германия</span>
+          <span class="country-card__price">от 5 500 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/fr.png" alt="Франция">
+          <span class="country-card__name">Франция</span>
+          <span class="country-card__price">от 5 000 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/gr.png" alt="Греция">
+          <span class="country-card__name">Греция</span>
+          <span class="country-card__price">от 4 500 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/cz.png" alt="Чехия">
+          <span class="country-card__name">Чехия</span>
+          <span class="country-card__price">от 4 500 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/ae.png" alt="ОАЭ">
+          <span class="country-card__name">ОАЭ</span>
+          <span class="country-card__price">от 3 500 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/th.png" alt="Таиланд">
+          <span class="country-card__name">Таиланд</span>
+          <span class="country-card__price">от 3 000 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/cn.png" alt="Китай">
+          <span class="country-card__name">Китай</span>
+          <span class="country-card__price">от 5 000 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/jp.png" alt="Япония">
+          <span class="country-card__name">Япония</span>
+          <span class="country-card__price">от 6 000 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/tr.png" alt="Турция">
+          <span class="country-card__name">Турция</span>
+          <span class="country-card__price">от 2 500 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card">
+          <img class="country-card__flag" loading="lazy" src="https://flagcdn.com/48x36/pt.png" alt="Португалия">
+          <span class="country-card__name">Португалия</span>
+          <span class="country-card__price">от 5 000 ₽</span>
+        </a>
+        <a href="#contacts" class="country-card country-card--more">
+          <span class="country-card__globe">🌍</span>
+          <span class="country-card__name">Другие страны</span>
+          <span class="country-card__price">Уточняйте</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2 class="section-title">Отзывы клиентов</h2>
+      <p class="section-subtitle">5 000+ довольных клиентов не могут ошибаться</p>
+      <div class="reviews__grid">
+
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">АМ</div>
+            <div>
+              <div class="review-card__name">Анна М.</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">Оформляла испанскую визу впервые. Всё объяснили, помогли с документами, записали на подачу. Виза готова за 5 дней. Очень довольна!</p>
+          <div class="review-card__country">🇪🇸 Испания</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">ДК</div>
+            <div>
+              <div class="review-card__name">Дмитрий К.</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">Срочно нужна была финская виза. Ребята сделали за 3 дня! Без нервов, всё чётко. Менеджер был на связи с утра до вечера.</p>
+          <div class="review-card__country">🇫🇮 Финляндия</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">ЕС</div>
+            <div>
+              <div class="review-card__name">Елена С.</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">Обращались по вопросу ВНЖ в Испании. Проконсультировали очень подробно, рассказали все нюансы. Рекомендую всем!</p>
+          <div class="review-card__country">🇪🇸 ВНЖ Испания</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">ИВ</div>
+            <div>
+              <div class="review-card__name">Иван В.</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">Заказывали тур в Италию с визовым сопровождением. Всё в одном месте — очень удобно. Тур был отличный, виза прошла с первого раза.</p>
+          <div class="review-card__country">🇮🇹 Тур Италия</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">МП</div>
+            <div>
+              <div class="review-card__name">Мария П.</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">Помогли с немецкой рабочей визой. Много документов, но менеджер всё разложил по полочкам. Получили с первого раза!</p>
+          <div class="review-card__country">🇩🇪 Германия</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">СН</div>
+            <div>
+              <div class="review-card__name">Светлана Н.</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">Уже третий раз обращаюсь сюда. Всегда профессионально, всегда результат. Больше никуда не пойду за визой!</p>
+          <div class="review-card__country">🇬🇷 Греция</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">ОФ</div>
+            <div>
+              <div class="review-card__name">Ольга Факушина</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">Саша — волшебник ✨ Всё оформил быстро, без лишних вопросов. Просто пришла, отдала документы и получила визу!</p>
+          <div class="review-card__country">🛂 Виза</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">СК</div>
+            <div>
+              <div class="review-card__name">Света Казакова</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">Как же круто!!! Оформили всё чётко, объяснили каждый шаг. Очень рада что обратилась именно сюда!</p>
+          <div class="review-card__country">🛂 Виза</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">Частые вопросы</h2>
+      <div class="faq__list">
+
+        <div class="faq__item">
+          <button class="faq__question">Сколько стоит оформление визы?</button>
+          <div class="faq__answer">
+            <p>Стоимость зависит от типа визы. Базовая стоимость — 10 000 ₽ + консульский сбор. Загранпаспорт — 45 000 ₽, карта АТЭС — 85 000 ₽. Позвоните или оставьте заявку — рассчитаем точно бесплатно.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">Как долго оформляется виза?</button>
+          <div class="faq__answer">
+            <p>Стандартные сроки: Шенген — 5-15 рабочих дней. Финляндия — 3-10 дней. Если нужно срочно — есть ускоренное оформление от 3 рабочих дней.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">Какие документы нужны для визы?</button>
+          <div class="faq__answer">
+            <p>Базовый пакет: загранпаспорт, фото, заполненная анкета, страховка, бронь отеля и авиабилетов, выписка из банка. Конкретный список зависит от страны — скажем точно на консультации.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">Что если откажут в визе?</button>
+          <div class="faq__answer">
+            <p>Мы возвращаем стоимость наших услуг при отказе. Но такое бывает редко — перед подачей тщательно проверяем все документы. 98% наших заявок одобряют.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">Нужно ли лично приходить в офис?</button>
+          <div class="faq__answer">
+            <p>Консультацию можно провести онлайн. Для подачи документов в консульство — обычно нужно личное присутствие (биометрия). Но мы всё организуем и сопроводим.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">Вы работаете только с физлицами?</button>
+          <div class="faq__answer">
+            <p>Нет, работаем и с юридическими лицами — деловые визы, командировки, корпоративные туры. Есть специальные условия для компаний.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question">Как записаться на консультацию?</button>
+          <div class="faq__answer">
+            <p>Заполните форму ниже, позвоните или напишите в Max/Telegram. Перезвоним в течение 15 минут в рабочее время.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="contacts" id="contacts">
+    <div class="container contacts__inner">
+
+      <div class="contacts__info">
+        <h2 class="section-title">Свяжитесь с нами</h2>
+        <p class="contacts__text">Оставьте заявку — перезвоним в течение 15 минут и ответим на все вопросы бесплатно.</p>
+
+        <ul class="contacts__list">
+          <li class="contacts__item">
+            <span class="contacts__icon">📍</span>
+            <span>Петрозаводск, ул. Кирова 5, эт. 2, офис 210</span>
+          </li>
+          <li class="contacts__item">
+            <span class="contacts__icon">📞</span>
+            <a href="tel:+79027701010">+7 (902) 770-10-10</a>
+          </li>
+          <li class="contacts__item">
+            <span class="contacts__icon">✉️</span>
+            <a href="mailto:info@grazhdanin-mira.ru">info@grazhdanin-mira.ru</a>
+          </li>
+          <li class="contacts__item">
+            <span class="contacts__icon">🕐</span>
+            <span>Пн–Пт: 10:00–19:00, Сб: 10:00–17:00</span>
+          </li>
+        </ul>
+
+        <div class="contacts__social">
+          <a href="https://t.me/denisov_visa" class="social-icon social-icon--tg" target="_blank" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.667l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.978.892z"/></svg>
+          </a>
+          <a href="https://vk.me/+79027701010" class="social-icon social-icon--wa" target="_blank" aria-label="Max">
+            <img src="img/max-logo.png" alt="Max" width="26" height="26" style="object-fit:contain">
+          </a>
+          <a href="https://vk.com/viza_petrozavodsk" class="social-icon social-icon--vk" target="_blank" aria-label="ВКонтакте">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.19 1.366 1.26 2.182 1.817.616.42 1.083.328 1.083.328l2.17-.03s1.137-.071.598-1.023c-.044-.073-.314-.664-1.62-1.877-1.365-1.267-1.183-1.062.462-3.252.999-1.333 1.398-2.146 1.273-2.494-.12-.331-.855-.243-.855-.243l-2.44.015s-.181-.025-.315.055c-.132.078-.217.26-.217.26s-.387 1.028-.903 1.902c-1.088 1.85-1.523 1.949-1.7 1.834-.414-.268-.31-1.075-.31-1.649 0-1.793.272-2.54-.529-2.733-.266-.065-.46-.107-1.139-.115-.872-.009-1.609.003-2.026.207-.278.136-.493.44-.362.457.162.021.529.099.724.363.25.341.241 1.107.241 1.107s.144 2.11-.335 2.372c-.329.18-.78-.187-1.748-1.86-.497-.858-.872-1.81-.872-1.81s-.072-.176-.202-.271c-.157-.115-.376-.151-.376-.151l-2.322.015s-.348.01-.476.162c-.113.135-.009.414-.009.414s1.818 4.25 3.876 6.395c1.888 1.967 4.03 1.838 4.03 1.838h.972z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Карта — после деплоя заменить на Яндекс.Карты iframe -->
+      <div class="contacts__map">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=34.3368%2C61.7828%2C34.3568%2C61.7928&layer=mapnik&marker=61.7878%2C34.3468"
+          title="Офис Гражданин мира на карте"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+        <a class="contacts__map-link" href="https://maps.yandex.ru/?text=Петрозаводск+Кирова+5" target="_blank">
+          Открыть в Яндекс.Картах →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ФОРМА ЗАЯВКИ -->
+  <section class="application" id="application">
+    <div class="container">
+      <div class="application__inner">
+        <div class="application__text">
+          <h2 class="section-title" style="text-align:left;color:#fff">Оставьте заявку</h2>
+          <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.7;margin-top:8px">Перезвоним в течение 15 минут<br>и ответим на все вопросы бесплатно</p>
+        </div>
+        <form class="form" id="form">
+          <div class="form__group">
+            <input type="text" name="name" class="form__input" placeholder="Ваше имя" required>
+          </div>
+          <div class="form__group">
+            <input type="tel" name="phone" class="form__input" placeholder="Телефон" required>
+          </div>
+          <div class="form__group">
+            <select name="service" class="form__input">
+              <option value="" disabled selected>Что вас интересует?</option>
+              <option value="visa">Виза (10 000 ₽)</option>
+              <option value="passport">Загранпаспорт (45 000 ₽)</option>
+              <option value="vnzh">ВНЖ / Гражданство</option>
+              <option value="ates">Карта АТЭС (85 000 ₽)</option>
+              <option value="card">Карта иностранного банка (38 000 ₽)</option>
+              <option value="work">Трудоустройство за рубежом</option>
+              <option value="study">Учёба за рубежом</option>
+              <option value="insurance">Страхование (от 500 ₽)</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Отправить заявку ✈️</button>
+          <p class="form__agree">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#" class="footer__logo">
+        <img src="img/logo/logo-horizontal.png" alt="Визовый центр Гражданин мира" height="56">
+      </a>
+      <p class="footer__copy">© 2026 Гражданин мира. Все права защищены.</p>
+      <nav class="footer__nav">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Оферта</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Плавающие кнопки соцсетей справа -->
+  <div class="float-social">
+    <button class="float-social__btn float-social__btn--ai" aria-label="AI-ассистент" id="aiBtn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.38-1 1.73V7h1a7 7 0 0 1 7 7H4a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2M7 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2m10 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2M4.5 16.5A2.5 2.5 0 0 0 2 19v1h20v-1a2.5 2.5 0 0 0-2.5-2.5h-15z"/></svg>
+    </button>
+    <a href="https://vk.me/+79027701010" class="float-social__btn float-social__btn--wa" target="_blank" aria-label="Max">
+      <img src="img/max-logo.png" alt="Max" width="26" height="26" style="object-fit:contain">
+    </a>
+    <a href="https://t.me/denisov_visa" class="float-social__btn float-social__btn--tg" target="_blank" aria-label="Telegram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.667l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.978.892z"/></svg>
+    </a>
+    <a href="https://vk.com/viza_petrozavodsk" class="float-social__btn float-social__btn--vk" target="_blank" aria-label="ВКонтакте">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.19 1.366 1.26 2.182 1.817.616.42 1.083.328 1.083.328l2.17-.03s1.137-.071.598-1.023c-.044-.073-.314-.664-1.62-1.877-1.365-1.267-1.183-1.062.462-3.252.999-1.333 1.398-2.146 1.273-2.494-.12-.331-.855-.243-.855-.243l-2.44.015s-.181-.025-.315.055c-.132.078-.217.26-.217.26s-.387 1.028-.903 1.902c-1.088 1.85-1.523 1.949-1.7 1.834-.414-.268-.31-1.075-.31-1.649 0-1.793.272-2.54-.529-2.733-.266-.065-.46-.107-1.139-.115-.872-.009-1.609.003-2.026.207-.278.136-.493.44-.362.457.162.021.529.099.724.363.25.341.241 1.107.241 1.107s.144 2.11-.335 2.372c-.329.18-.78-.187-1.748-1.86-.497-.858-.872-1.81-.872-1.81s-.072-.176-.202-.271c-.157-.115-.376-.151-.376-.151l-2.322.015s-.348.01-.476.162c-.113.135-.009.414-.009.414s1.818 4.25 3.876 6.395c1.888 1.967 4.03 1.838 4.03 1.838h.972z"/></svg>
+    </a>
+  </div>
+
+  <!-- AI Чат -->
+  <div class="ai-chat" id="aiChat">
+    <div class="ai-chat__header">
+      <div class="ai-chat__avatar">🤖</div>
+      <div>
+        <div class="ai-chat__name">AI-ассистент</div>
+        <div class="ai-chat__status">Гражданин мира · онлайн</div>
+      </div>
+      <button class="ai-chat__close" id="aiClose" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="ai-chat__messages" id="aiMessages">
+      <div class="ai-chat__msg ai-chat__msg--bot">
+        Привет! 👋 Я AI-ассистент визового центра «Гражданин мира».<br><br>
+        Помогу ответить на вопросы о визах, ценах и документах. Что вас интересует?
+      </div>
+      <div class="ai-chat__suggestions">
+        <button class="ai-chat__suggest" data-q="Сколько стоит виза?">Сколько стоит виза?</button>
+        <button class="ai-chat__suggest" data-q="Какие документы нужны?">Какие документы нужны?</button>
+        <button class="ai-chat__suggest" data-q="Как быстро оформляете?">Как быстро оформляете?</button>
+      </div>
+    </div>
+    <div class="ai-chat__input-wrap">
+      <input type="text" class="ai-chat__input" id="aiInput" placeholder="Задайте вопрос...">
+      <button class="ai-chat__send" id="aiSend">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Sticky CTA (только мобилка) -->
+  <div class="sticky-cta">
+    <a href="tel:+79027701010" class="sticky-cta__call">📞 Позвонить</a>
+    <a href="https://vk.me/+79027701010" class="sticky-cta__wa" target="_blank">💬 Max</a>
+  </div>
+
+  <!-- Прогресс скролла -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Toast контейнер -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
