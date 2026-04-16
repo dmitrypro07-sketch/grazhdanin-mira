@@ -404,6 +404,159 @@ section { padding: 80px 0; }
    SERVICES
    =================================== */
 .services { background: var(--color-bg); }
+
+/* ===================================
+   НОВЫЕ ФОТО-КАРТОЧКИ УСЛУГ
+   =================================== */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.svc-card {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--color-dark);
+}
+
+.svc-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.svc-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(10, 25, 27, 0.85) 0%,
+    rgba(10, 25, 27, 0.3) 45%,
+    transparent 100%);
+  transition: opacity 0.3s ease;
+}
+
+.svc-card:hover .svc-card__img {
+  transform: scale(1.07);
+}
+
+.svc-card:hover::after {
+  opacity: 0.85;
+}
+
+.svc-card__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 20px 22px;
+  z-index: 2;
+}
+
+.svc-card__name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 5px;
+  line-height: 1.25;
+}
+
+.svc-card__price {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.3px;
+}
+
+/* Широкая карточка (заглушка) */
+.svc-card--wide {
+  grid-column: 1 / -1;
+  aspect-ratio: auto;
+  height: 200px;
+}
+
+.svc-card__placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1F3638 0%, #2c4a4c 50%, #1a3028 100%);
+}
+
+.svc-card__placeholder::after {
+  content: '💬';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  opacity: 0.12;
+}
+
+.svc-card__body--wide {
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  bottom: 0;
+  gap: 40px;
+}
+
+.svc-card__wide-content {
+  flex: 1;
+}
+
+.svc-card__wide-content .svc-card__name {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.svc-card__desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.svc-card__wide-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.svc-card__price-big {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.svc-card__cta-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--color-accent);
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 100px;
+  transition: var(--transition);
+}
+
+.svc-card--wide:hover .svc-card__cta-btn {
+  background: #e8a86a;
+  transform: translateY(-2px);
+}
+
+/* Старые flip-карточки (оставлены для совместимости) */
 .services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1496,6 +1649,13 @@ section { padding: 80px 0; }
   .nav__link { width: 100%; text-align: center; padding: 12px; }
   .burger { display: flex; }
 
+  /* Услуги */
+  .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .svc-card__body--wide { flex-direction: column; align-items: flex-start; padding: 24px; gap: 16px; }
+  .svc-card__wide-cta { flex-direction: row; align-items: center; gap: 20px; }
+  .svc-card__wide-content .svc-card__name { font-size: 18px; }
+  .svc-card__desc { font-size: 13px; }
+
   /* Hero */
   .hero__title { font-size: 38px; }
   .hero__stats { display: none; }
@@ -1559,6 +1719,10 @@ section { padding: 80px 0; }
 }
 
 @media (max-width: 480px) {
+  .svc-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .svc-card__name { font-size: 14px; }
+  .svc-card__body { padding: 12px 12px 14px; }
+  .svc-card--wide { height: auto; min-height: 160px; }
   .hero__title { font-size: 30px; }
   .stat__divider { width: 40px; height: 1px; }
   .countries__grid .country-card { flex: 0 0 calc((100% - 16px) / 2); min-width: unset; max-width: unset; }
