@@ -488,6 +488,18 @@ section { padding: 80px 0; }
   height: 200px;
 }
 
+/* Нижний сплит: страхование + консультация */
+.svc-split {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+}
+.svc-split .svc-card {
+  flex: 1;
+  aspect-ratio: auto;
+  height: 200px;
+}
+
 /* Градиентная карточка */
 .svc-card--gradient {
   background: linear-gradient(135deg, #1F3638 0%, #2a4a4c 40%, #1a3028 70%, #243830 100%);
