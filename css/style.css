@@ -946,37 +946,118 @@ section { padding: 80px 0; }
    =================================== */
 .countries { background: var(--color-bg); }
 .countries__grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 .country-card {
-  flex: 0 0 calc((100% - 5 * 16px) / 6);
-  min-width: 140px;
-  max-width: 180px;
-  background: var(--color-white);
-  border-radius: var(--radius);
-  padding: 20px 16px;
-  text-align: center;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.country-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+/* Фото с zoom */
+.country-card__img-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.country-card__img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+.country-card:hover .country-card__img {
+  transform: scale(1.08);
+}
+
+/* Тёмный градиент снизу */
+.country-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,25,27,0.85) 0%, rgba(10,25,27,0.2) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Бейдж С визой / Без визы */
+.country-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.country-card__badge--free {
+  background: rgba(34,197,94,0.9);
+  color: #fff;
+}
+.country-card__badge--visa {
+  background: rgba(209,143,89,0.9);
+  color: #fff;
+}
+
+/* Текст внизу */
+.country-card__name {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  padding: 0 16px 4px;
+}
+.country-card__price {
+  position: relative;
+  z-index: 2;
+  font-size: 13px;
+  color: var(--color-accent);
+  font-weight: 600;
+  padding: 0 16px 16px;
+}
+
+/* Карточка "Другие страны" */
+.country-card--more {
+  background: var(--color-light);
+  border: 2px dashed var(--color-accent);
+}
+.country-card--more::after { display: none; }
+.country-card__more-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  height: 100%;
+  gap: 8px;
+  padding: 20px;
 }
-.country-card:hover { transform: translateY(-3px); border: 1px solid var(--color-accent); }
-.country-card__flag {
-  width: 48px;
-  height: 36px;
-  object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+.country-card--more .country-card__name { color: var(--color-dark); position: static; padding: 0; }
+.country-card--more .country-card__price { color: var(--color-accent); position: static; padding: 0; }
+.country-card__globe { font-size: 48px; line-height: 1; }
+
+@media (max-width: 900px) {
+  .countries__grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
 }
-.country-card__globe { font-size: 36px; line-height: 1; }
-.country-card__name { font-size: 14px; font-weight: 600; color: var(--color-dark); }
-.country-card__price { font-size: 13px; color: var(--color-accent); font-weight: 600; }
+@media (max-width: 600px) {
+  .countries__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .country-card__name { font-size: 14px; }
+}
 
 /* ===================================
    REVIEWS
@@ -2467,7 +2548,7 @@ section { padding: 80px 0; }
 
   /* About */
   .about__inner { grid-template-columns: 1fr; gap: 48px; }
-  .countries__grid .country-card { flex: 0 0 calc((100% - 32px) / 3); min-width: unset; max-width: unset; }
+  /* country-card grid handled in component styles */
   .about__badge { right: 0; bottom: -16px; }
   .about__facts { flex-direction: column; gap: 16px; }
   .about__content { padding-bottom: 0; }
@@ -2506,5 +2587,5 @@ section { padding: 80px 0; }
   .svc-card__grad-price { font-size: 24px; }
   .hero__title { font-size: 30px; }
   .stat__divider { width: 40px; height: 1px; }
-  .countries__grid .country-card { flex: 0 0 calc((100% - 16px) / 2); min-width: unset; max-width: unset; }
+  /* country-card mobile handled in component styles */
 }
