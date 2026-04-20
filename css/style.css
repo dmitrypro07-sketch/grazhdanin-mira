@@ -199,6 +199,11 @@ section { padding: 80px 0; }
   object-fit: cover;
   z-index: 0;
 }
+.hero__video--mobile { display: none; }
+@media (max-width: 767px) {
+  .hero__video--desktop { display: none; }
+  .hero__video--mobile { display: block; }
+}
 
 /* Тёмный оверлей поверх видео */
 .hero__overlay {
