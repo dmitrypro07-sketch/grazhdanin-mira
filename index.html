@@ -492,163 +492,179 @@
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="container">
-      <div class="about-slider" id="aboutSlider">
+      <h2 class="section-title reveal">О компании и команде</h2>
+      <p class="section-subtitle reveal">Листайте — нажмите на карточку, чтобы узнать больше</p>
+    </div>
+    <div class="team-slider-wrap">
+      <button class="team-arrow team-arrow--prev" aria-label="Назад">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="team-arrow team-arrow--next" aria-label="Вперёд">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
 
-        <div class="about-slides-wrap" id="aboutSlidesWrap">
+      <div class="team-track" id="teamTrack">
 
-          <!-- Слайд 1: Компания -->
-          <div class="about-slide about-slide--active">
-            <div class="about__inner">
-              <div class="about__photo">
-                <div class="about__photo-wrap">
-                  <img src="img/about-photo.jpg" alt="Команда Гражданин мира" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                  <div class="about__photo-placeholder"><span>ГМ</span></div>
-                </div>
-                <div class="about__badge">
-                  <span class="about__badge-num">500+</span>
-                  <span class="about__badge-text">виз оформлено</span>
-                </div>
-              </div>
-              <div class="about__content">
-                <span class="hero__label" style="margin-bottom:16px;display:inline-block">О КОМПАНИИ</span>
-                <h2 class="section-title" style="text-align:left;margin-bottom:16px">Гражданин мира —<br>это про свободу</h2>
-                <p class="about__text">Свобода перемещения по всему миру — вот наша философия. Виза, тур, ВНЖ, карта иностранного банка, круиз — мы помогаем двигаться туда, куда хочется, без барьеров и лишних сложностей.</p>
-                <p class="about__text">Мы сами объехали 30+ стран и знаем изнутри, как это работает. Каждый кейс ведём индивидуально — берём сложные случаи, работаем с отказами, находим альтернативные маршруты.</p>
-                <div class="about__facts">
-                  <div class="about__fact"><span class="about__fact-num">30+</span><span class="about__fact-label">стран посетили сами</span></div>
-                  <div class="about__fact"><span class="about__fact-num">500+</span><span class="about__fact-label">виз оформлено</span></div>
-                  <div class="about__fact"><span class="about__fact-num">45+</span><span class="about__fact-label">стран в практике</span></div>
-                </div>
-              </div>
+        <!-- Карточка 1: Компания (широкая) -->
+        <div class="team-card team-card--company">
+          <div class="team-card__company-bg">
+            <img src="img/about-photo.jpg" alt="Гражданин мира" onerror="this.style.display='none'">
+          </div>
+          <div class="team-card__company-content">
+            <span class="hero__label" style="margin-bottom:14px;display:inline-block">О КОМПАНИИ</span>
+            <h2 class="team-card__company-title">Гражданин мира —<br>это про свободу</h2>
+            <p class="team-card__company-text">Мы сами объехали 30+ стран и знаем изнутри, как это работает. Виза, тур, круиз, ВНЖ — помогаем двигаться туда, куда хочется.</p>
+            <div class="team-card__facts">
+              <div class="team-card__fact"><span class="team-card__fact-num">30+</span><span class="team-card__fact-label">стран сами</span></div>
+              <div class="team-card__fact"><span class="team-card__fact-num">500+</span><span class="team-card__fact-label">виз</span></div>
+              <div class="team-card__fact"><span class="team-card__fact-num">45+</span><span class="team-card__fact-label">стран</span></div>
             </div>
           </div>
-
-          <!-- Слайд 2: Александр -->
-          <div class="about-slide">
-            <div class="about-person">
-              <div class="about-person__photo-wrap">
-                <img src="img/team/alexander.jpg" alt="Александр Денисов" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="about-person__placeholder"><span>А</span></div>
-              </div>
-              <div class="about-person__info">
-                <span class="hero__label" style="margin-bottom:12px;display:inline-block">НАША КОМАНДА</span>
-                <h3 class="about-person__name">Денисов Александр Сергеевич</h3>
-                <span class="about-person__role">Основатель и руководитель</span>
-                <p class="about-person__bio">Путешественник с личным опытом в 27+ странах. Создал «Гражданин мира» из убеждения: каждый человек заслуживает свободы перемещения без бюрократических барьеров. Лично ведёт сложные кейсы и отвечает за стратегию компании.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Слайд 3: Вероника -->
-          <div class="about-slide">
-            <div class="about-person">
-              <div class="about-person__photo-wrap">
-                <img src="img/team/veronika.jpg" alt="Вероника" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="about-person__placeholder"><span>В</span></div>
-              </div>
-              <div class="about-person__info">
-                <span class="hero__label" style="margin-bottom:12px;display:inline-block">НАША КОМАНДА</span>
-                <h3 class="about-person__name">Вероника</h3>
-                <span class="about-person__role">SMM / продвижение</span>
-                <p class="about-person__bio">Отвечает за присутствие компании в социальных сетях и коммуникацию с клиентами. Ведёт ВКонтакте и помогает людям найти ответы ещё до первого звонка.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Слайд 4: Татьяна -->
-          <div class="about-slide">
-            <div class="about-person">
-              <div class="about-person__photo-wrap">
-                <img src="img/team/tatiana.jpg" alt="Татьяна" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="about-person__placeholder"><span>Т</span></div>
-              </div>
-              <div class="about-person__info">
-                <span class="hero__label" style="margin-bottom:12px;display:inline-block">НАША КОМАНДА</span>
-                <h3 class="about-person__name">Булочникова Татьяна Федоровна</h3>
-                <span class="about-person__role">Менеджер-оформитель</span>
-                <p class="about-person__bio">Сертифицированный специалист по визам. Ведёт клиентов от первого обращения до получения документов на руки. Специализируется на шенгенских странах и работе с повторными заявками.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Слайд 5: Илона -->
-          <div class="about-slide">
-            <div class="about-person">
-              <div class="about-person__photo-wrap">
-                <img src="img/team/ilona.jpg" alt="Илона" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="about-person__placeholder"><span>И</span></div>
-              </div>
-              <div class="about-person__info">
-                <span class="hero__label" style="margin-bottom:12px;display:inline-block">НАША КОМАНДА</span>
-                <h3 class="about-person__name">Тихомирова Илона Матвеевна</h3>
-                <span class="about-person__role">Менеджер-оформитель</span>
-                <p class="about-person__bio">Специалист по туристическим и деловым визам. Помогает клиентам собрать безупречный пакет документов и записаться на подачу даже в период высокой загрузки консульств.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Слайд 6: Николай -->
-          <div class="about-slide">
-            <div class="about-person">
-              <div class="about-person__photo-wrap">
-                <img src="img/team/nikolay.jpg" alt="Николай" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="about-person__placeholder"><span>Н</span></div>
-              </div>
-              <div class="about-person__info">
-                <span class="hero__label" style="margin-bottom:12px;display:inline-block">НАША КОМАНДА</span>
-                <h3 class="about-person__name">Николай</h3>
-                <span class="about-person__role">Видеомонтажник</span>
-                <p class="about-person__bio">Создаёт весь видеоконтент компании — от съёмки до монтажа. Работает за кадром, но именно его материалы рассказывают историю «Гражданин мира» так, как не опишут слова.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Слайд 7: Ирина -->
-          <div class="about-slide">
-            <div class="about-person">
-              <div class="about-person__photo-wrap">
-                <img src="img/team/irina.jpg" alt="Ирина" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="about-person__placeholder"><span>И</span></div>
-              </div>
-              <div class="about-person__info">
-                <span class="hero__label" style="margin-bottom:12px;display:inline-block">НАША КОМАНДА</span>
-                <h3 class="about-person__name">Ирина</h3>
-                <span class="about-person__role">Бухгалтер</span>
-                <p class="about-person__bio">Отвечает за финансовый учёт и документооборот компании. Обеспечивает прозрачность и порядок во всех финансовых операциях «Гражданин мира».</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Слайд 8: Алексей -->
-          <div class="about-slide">
-            <div class="about-person">
-              <div class="about-person__photo-wrap">
-                <img src="img/team/alexey.jpg" alt="Алексей" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="about-person__placeholder"><span>А</span></div>
-              </div>
-              <div class="about-person__info">
-                <span class="hero__label" style="margin-bottom:12px;display:inline-block">НАША КОМАНДА</span>
-                <h3 class="about-person__name">Алексей</h3>
-                <span class="about-person__role">Партнёр · AI и продвижение</span>
-                <p class="about-person__bio">Отвечает за цифровое развитие компании: внедрение искусственного интеллекта в процессы, продвижение в интернете и разработку сайта. Помогает «Гражданину мира» быть современным и заметным.</p>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /about-slides-wrap -->
-
-        <!-- Навигация -->
-        <div class="about-nav">
-          <button class="about-nav__btn about-nav__btn--prev" aria-label="Назад">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <div class="about-nav__dots" id="aboutDots"></div>
-          <button class="about-nav__btn about-nav__btn--next" aria-label="Вперёд">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
         </div>
 
-      </div>
+        <!-- Александр -->
+        <div class="team-card team-card--person">
+          <div class="team-card__inner">
+            <div class="team-card__front">
+              <img src="img/team/alexander.jpg" alt="Александр Денисов" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="team-card__placeholder"><span>А</span></div>
+              <div class="team-card__front-info">
+                <h3 class="team-card__name">Александр Денисов</h3>
+                <span class="team-card__role">Основатель и руководитель</span>
+              </div>
+              <span class="team-card__flip-hint">Нажмите ↻</span>
+            </div>
+            <div class="team-card__back">
+              <h3 class="team-card__back-name">Александр Денисов</h3>
+              <span class="team-card__back-role">Основатель и руководитель</span>
+              <p class="team-card__bio">Путешественник с опытом в 27+ странах. Создал «Гражданин мира» из убеждения: каждый заслуживает свободы перемещения. Лично ведёт сложные кейсы и отвечает за стратегию.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Татьяна -->
+        <div class="team-card team-card--person">
+          <div class="team-card__inner">
+            <div class="team-card__front">
+              <img src="img/team/tatiana.jpg" alt="Татьяна" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="team-card__placeholder"><span>Т</span></div>
+              <div class="team-card__front-info">
+                <h3 class="team-card__name">Булочникова Татьяна</h3>
+                <span class="team-card__role">Менеджер-оформитель</span>
+              </div>
+              <span class="team-card__flip-hint">Нажмите ↻</span>
+            </div>
+            <div class="team-card__back">
+              <h3 class="team-card__back-name">Булочникова Татьяна Федоровна</h3>
+              <span class="team-card__back-role">Менеджер-оформитель</span>
+              <p class="team-card__bio">Сертифицированный специалист по визам. Ведёт клиентов от первого обращения до получения документов. Специализируется на шенгенских странах и повторных заявках.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Илона -->
+        <div class="team-card team-card--person">
+          <div class="team-card__inner">
+            <div class="team-card__front">
+              <img src="img/team/ilona.jpg" alt="Илона" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="team-card__placeholder"><span>И</span></div>
+              <div class="team-card__front-info">
+                <h3 class="team-card__name">Тихомирова Илона</h3>
+                <span class="team-card__role">Менеджер-оформитель</span>
+              </div>
+              <span class="team-card__flip-hint">Нажмите ↻</span>
+            </div>
+            <div class="team-card__back">
+              <h3 class="team-card__back-name">Тихомирова Илона Матвеевна</h3>
+              <span class="team-card__back-role">Менеджер-оформитель</span>
+              <p class="team-card__bio">Специалист по туристическим и деловым визам. Помогает собрать безупречный пакет документов и записаться на подачу даже в период высокой загрузки консульств.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Вероника -->
+        <div class="team-card team-card--person">
+          <div class="team-card__inner">
+            <div class="team-card__front">
+              <img src="img/team/veronika.jpg" alt="Вероника" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="team-card__placeholder"><span>В</span></div>
+              <div class="team-card__front-info">
+                <h3 class="team-card__name">Вероника</h3>
+                <span class="team-card__role">SMM / продвижение</span>
+              </div>
+              <span class="team-card__flip-hint">Нажмите ↻</span>
+            </div>
+            <div class="team-card__back">
+              <h3 class="team-card__back-name">Вероника</h3>
+              <span class="team-card__back-role">SMM / продвижение</span>
+              <p class="team-card__bio">Отвечает за присутствие компании в соцсетях и коммуникацию с клиентами. Ведёт ВКонтакте и помогает людям найти ответы ещё до первого звонка.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Николай -->
+        <div class="team-card team-card--person">
+          <div class="team-card__inner">
+            <div class="team-card__front">
+              <img src="img/team/nikolay.jpg" alt="Николай" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="team-card__placeholder"><span>Н</span></div>
+              <div class="team-card__front-info">
+                <h3 class="team-card__name">Николай</h3>
+                <span class="team-card__role">Видеомонтажник</span>
+              </div>
+              <span class="team-card__flip-hint">Нажмите ↻</span>
+            </div>
+            <div class="team-card__back">
+              <h3 class="team-card__back-name">Николай</h3>
+              <span class="team-card__back-role">Видеомонтажник</span>
+              <p class="team-card__bio">Создаёт весь видеоконтент компании. Работает за кадром, но именно его материалы рассказывают историю «Гражданин мира» так, как не опишут слова.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ирина -->
+        <div class="team-card team-card--person">
+          <div class="team-card__inner">
+            <div class="team-card__front">
+              <img src="img/team/irina.jpg" alt="Ирина" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="team-card__placeholder"><span>И</span></div>
+              <div class="team-card__front-info">
+                <h3 class="team-card__name">Ирина</h3>
+                <span class="team-card__role">Бухгалтер</span>
+              </div>
+              <span class="team-card__flip-hint">Нажмите ↻</span>
+            </div>
+            <div class="team-card__back">
+              <h3 class="team-card__back-name">Ирина</h3>
+              <span class="team-card__back-role">Бухгалтер</span>
+              <p class="team-card__bio">Отвечает за финансовый учёт и документооборот компании. Обеспечивает прозрачность и порядок во всех финансовых операциях «Гражданин мира».</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Алексей -->
+        <div class="team-card team-card--person">
+          <div class="team-card__inner">
+            <div class="team-card__front">
+              <img src="img/team/alexey.jpg" alt="Алексей" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="team-card__placeholder"><span>А</span></div>
+              <div class="team-card__front-info">
+                <h3 class="team-card__name">Алексей</h3>
+                <span class="team-card__role">Партнёр · AI и продвижение</span>
+              </div>
+              <span class="team-card__flip-hint">Нажмите ↻</span>
+            </div>
+            <div class="team-card__back">
+              <h3 class="team-card__back-name">Алексей</h3>
+              <span class="team-card__back-role">Партнёр · AI и продвижение</span>
+              <p class="team-card__bio">Отвечает за цифровое развитие: AI в процессах, продвижение в интернете и разработку сайта. Помогает «Гражданину мира» быть современным и заметным.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /team-track -->
+
+      <div class="team-dots" id="teamDots"></div>
     </div>
   </section>
 

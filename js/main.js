@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initForm();
   initCursor();
   initReviewsSlider();
-  initAboutSlider();
+  initTeamSlider();
 });
 
 // ===================================
@@ -595,91 +595,86 @@ function initReviewsSlider() {
 }
 
 // ===================================
-// ABOUT SLIDER — перелистывание
+// TEAM SLIDER — горизонтальная лента + flip
 // ===================================
-function initAboutSlider() {
-  const wrap = document.getElementById('aboutSlidesWrap');
-  const dotsWrap = document.getElementById('aboutDots');
-  const slider = document.getElementById('aboutSlider');
-  if (!wrap || !dotsWrap) return;
+function initTeamSlider() {
+  const track = document.getElementById('teamTrack');
+  const dotsWrap = document.getElementById('teamDots');
+  if (!track || !dotsWrap) return;
 
-  const slides = wrap.querySelectorAll('.about-slide');
-  const prevBtn = slider.querySelector('.about-nav__btn--prev');
-  const nextBtn = slider.querySelector('.about-nav__btn--next');
-  let current = 0;
-  let isAnimating = false;
+  const cards = Array.from(track.querySelectorAll('.team-card'));
+  const prevBtn = document.querySelector('.team-arrow--prev');
+  const nextBtn = document.querySelector('.team-arrow--next');
+  let activeIdx = 0;
 
   // Точки
-  slides.forEach((_, i) => {
+  cards.forEach((_, i) => {
     const dot = document.createElement('button');
-    dot.className = 'about-dot' + (i === 0 ? ' about-dot--active' : '');
-    dot.setAttribute('aria-label', 'Слайд ' + (i + 1));
-    dot.addEventListener('click', () => goTo(i));
+    dot.className = 'team-dot' + (i === 0 ? ' team-dot--active' : '');
+    dot.setAttribute('aria-label', 'Карточка ' + (i + 1));
+    dot.addEventListener('click', () => scrollTo(i));
     dotsWrap.appendChild(dot);
   });
 
   function updateDots(idx) {
-    dotsWrap.querySelectorAll('.about-dot').forEach((d, i) => {
-      d.classList.toggle('about-dot--active', i === idx);
+    dotsWrap.querySelectorAll('.team-dot').forEach((d, i) => {
+      d.classList.toggle('team-dot--active', i === idx);
     });
+    activeIdx = idx;
   }
 
-  function goTo(next, dir) {
-    if (next === current || isAnimating) return;
-    isAnimating = true;
-    const direction = dir !== undefined ? dir : (next > current ? 'next' : 'prev');
-
-    const outSlide = slides[current];
-    const inSlide = slides[next];
-
-    // Зафиксировать высоту контейнера
-    wrap.style.height = wrap.offsetHeight + 'px';
-
-    // Выходящий слайд переводим в absolute и запускаем exit-анимацию
-    outSlide.style.position = 'absolute';
-    outSlide.style.top = '0'; outSlide.style.left = '0'; outSlide.style.right = '0';
-    outSlide.classList.add(direction === 'next' ? 'about-slide--exiting-left' : 'about-slide--exiting-right');
-    outSlide.classList.remove('about-slide--active');
-
-    // Входящий слайд — relative, запускаем enter-анимацию
-    inSlide.style.position = 'relative';
-    inSlide.style.opacity = '1';
-    inSlide.classList.add(direction === 'next' ? 'about-slide--entering-next' : 'about-slide--entering-prev');
-
-    setTimeout(() => {
-      // Убираем классы у выходящего
-      outSlide.classList.remove('about-slide--exiting-left', 'about-slide--exiting-right');
-      outSlide.style.position = '';
-      outSlide.style.top = ''; outSlide.style.left = ''; outSlide.style.right = '';
-      outSlide.style.opacity = '';
-
-      // Финализируем входящий
-      inSlide.classList.remove('about-slide--entering-next', 'about-slide--entering-prev');
-      inSlide.classList.add('about-slide--active');
-      inSlide.style.position = '';
-      inSlide.style.opacity = '';
-
-      // Разблокируем высоту
-      wrap.style.height = '';
-
-      updateDots(next);
-      current = next;
-      isAnimating = false;
-    }, 520);
+  function scrollTo(idx) {
+    const card = cards[idx];
+    const trackRect = track.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    track.scrollBy({ left: cardRect.left - trackRect.left - 48, behavior: 'smooth' });
+    updateDots(idx);
   }
 
-  prevBtn.addEventListener('click', () => goTo((current - 1 + slides.length) % slides.length, 'prev'));
-  nextBtn.addEventListener('click', () => goTo((current + 1) % slides.length, 'next'));
+  // Стрелки
+  prevBtn && prevBtn.addEventListener('click', () => scrollTo(Math.max(0, activeIdx - 1)));
+  nextBtn && nextBtn.addEventListener('click', () => scrollTo(Math.min(cards.length - 1, activeIdx + 1)));
 
-  // Свайп
-  let touchStartX = 0;
-  slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-  slider.addEventListener('touchend', e => {
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) {
-      goTo(diff > 0 ? (current + 1) % slides.length : (current - 1 + slides.length) % slides.length, diff > 0 ? 'next' : 'prev');
-    }
+  // Flip по клику (персоны)
+  track.querySelectorAll('.team-card--person').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
   });
+
+  // Drag мышью
+  let isDragging = false, startX = 0, scrollLeft = 0, dragMoved = false;
+  track.addEventListener('mousedown', e => {
+    isDragging = true; dragMoved = false;
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+    track.classList.add('dragging');
+  });
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    track.classList.remove('dragging');
+  });
+  track.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    dragMoved = true;
+    const x = e.pageX - track.offsetLeft;
+    track.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
+  // Не флипать если был drag
+  track.querySelectorAll('.team-card--person').forEach(card => {
+    card.addEventListener('mousedown', () => { dragMoved = false; });
+    card.addEventListener('click', e => { if (dragMoved) e.stopImmediatePropagation(); });
+  });
+
+  // Обновлять точки при скролле
+  track.addEventListener('scroll', () => {
+    const trackLeft = track.getBoundingClientRect().left;
+    let closest = 0, minDist = Infinity;
+    cards.forEach((c, i) => {
+      const dist = Math.abs(c.getBoundingClientRect().left - trackLeft);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    updateDots(closest);
+  }, { passive: true });
 }
 
 // AI-кнопка в sticky CTA (мобилка)
