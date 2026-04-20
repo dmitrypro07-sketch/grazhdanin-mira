@@ -1329,8 +1329,87 @@ section { padding: 80px 0; }
   margin-top: 4px;
 }
 
-/* === TEAM SLIDER === */
+/* === ABOUT HERO (общее фото + философия) === */
 .about { background: var(--color-white); padding-bottom: 0; }
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  margin-bottom: 48px;
+  overflow: hidden;
+}
+.about-hero__img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.about-hero__img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.about-hero__img-placeholder {
+  display: none;
+  width: 100%; height: 100%; min-height: 400px;
+  align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--color-dark), #2d5052);
+  font-size: 100px; font-weight: 700;
+  color: var(--color-accent); opacity: 0.3;
+}
+.about-hero__content {
+  background: var(--color-dark);
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-hero__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.about-hero__text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 32px;
+}
+.about-hero__facts {
+  display: flex;
+  gap: 24px;
+}
+.about-hero__fact { text-align: center; }
+.about-hero__fact-num {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+}
+.about-hero__fact-label {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    margin-bottom: 32px;
+  }
+  .about-hero__img-wrap { height: 280px; }
+  .about-hero__content { padding: 32px 20px; }
+  .about-hero__title { font-size: 24px; }
+  .about-hero__facts { gap: 12px; }
+  .about-hero__fact-num { font-size: 22px; }
+}
+
+/* === TEAM SLIDER === */
 
 .team-slider-wrap {
   position: relative;
