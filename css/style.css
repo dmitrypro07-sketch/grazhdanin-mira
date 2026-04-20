@@ -116,14 +116,27 @@ section { padding: 80px 0; }
   background: var(--color-white);
   box-shadow: 0 2px 12px rgba(31, 54, 56, 0.08);
   padding: 0;
+  overflow: visible;
 }
 .header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  height: 52px;
 }
-.header__logo img { height: 68px; transform: scale(1.25); transform-origin: left center; }
+.header__logo {
+  position: relative;
+  z-index: 101;
+}
+.header__logo img {
+  height: 80px;
+  transform: scale(1.25);
+  transform-origin: left center;
+  position: relative;
+  top: 16px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
+}
 .nav {
   display: flex;
   align-items: center;
