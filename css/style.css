@@ -258,9 +258,11 @@ section { padding: 80px 0; }
   margin-top: -8px;
 }
 .hero__title em {
-  font-style: italic;
+  font-style: normal;
   color: var(--color-accent);
-  font-weight: 400;
+  font-weight: 700;
+  -webkit-text-stroke: 1.5px #1F3638;
+  paint-order: stroke fill;
 }
 
 .hero__services {
