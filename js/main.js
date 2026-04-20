@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initForm();
   initCursor();
   initReviewsSlider();
+  initAboutSlider();
 });
 
 // ===================================
@@ -591,6 +592,94 @@ function initReviewsSlider() {
 
   buildDots();
   goTo(0);
+}
+
+// ===================================
+// ABOUT SLIDER — перелистывание
+// ===================================
+function initAboutSlider() {
+  const wrap = document.getElementById('aboutSlidesWrap');
+  const dotsWrap = document.getElementById('aboutDots');
+  const slider = document.getElementById('aboutSlider');
+  if (!wrap || !dotsWrap) return;
+
+  const slides = wrap.querySelectorAll('.about-slide');
+  const prevBtn = slider.querySelector('.about-nav__btn--prev');
+  const nextBtn = slider.querySelector('.about-nav__btn--next');
+  let current = 0;
+  let isAnimating = false;
+
+  // Точки
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'about-dot' + (i === 0 ? ' about-dot--active' : '');
+    dot.setAttribute('aria-label', 'Слайд ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  function updateDots(idx) {
+    dotsWrap.querySelectorAll('.about-dot').forEach((d, i) => {
+      d.classList.toggle('about-dot--active', i === idx);
+    });
+  }
+
+  function goTo(next, dir) {
+    if (next === current || isAnimating) return;
+    isAnimating = true;
+    const direction = dir !== undefined ? dir : (next > current ? 'next' : 'prev');
+
+    const outSlide = slides[current];
+    const inSlide = slides[next];
+
+    // Зафиксировать высоту контейнера
+    wrap.style.height = wrap.offsetHeight + 'px';
+
+    // Выходящий слайд переводим в absolute и запускаем exit-анимацию
+    outSlide.style.position = 'absolute';
+    outSlide.style.top = '0'; outSlide.style.left = '0'; outSlide.style.right = '0';
+    outSlide.classList.add(direction === 'next' ? 'about-slide--exiting-left' : 'about-slide--exiting-right');
+    outSlide.classList.remove('about-slide--active');
+
+    // Входящий слайд — relative, запускаем enter-анимацию
+    inSlide.style.position = 'relative';
+    inSlide.style.opacity = '1';
+    inSlide.classList.add(direction === 'next' ? 'about-slide--entering-next' : 'about-slide--entering-prev');
+
+    setTimeout(() => {
+      // Убираем классы у выходящего
+      outSlide.classList.remove('about-slide--exiting-left', 'about-slide--exiting-right');
+      outSlide.style.position = '';
+      outSlide.style.top = ''; outSlide.style.left = ''; outSlide.style.right = '';
+      outSlide.style.opacity = '';
+
+      // Финализируем входящий
+      inSlide.classList.remove('about-slide--entering-next', 'about-slide--entering-prev');
+      inSlide.classList.add('about-slide--active');
+      inSlide.style.position = '';
+      inSlide.style.opacity = '';
+
+      // Разблокируем высоту
+      wrap.style.height = '';
+
+      updateDots(next);
+      current = next;
+      isAnimating = false;
+    }, 520);
+  }
+
+  prevBtn.addEventListener('click', () => goTo((current - 1 + slides.length) % slides.length, 'prev'));
+  nextBtn.addEventListener('click', () => goTo((current + 1) % slides.length, 'next'));
+
+  // Свайп
+  let touchStartX = 0;
+  slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  slider.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      goTo(diff > 0 ? (current + 1) % slides.length : (current - 1 + slides.length) % slides.length, diff > 0 ? 'next' : 'prev');
+    }
+  });
 }
 
 // AI-кнопка в sticky CTA (мобилка)
