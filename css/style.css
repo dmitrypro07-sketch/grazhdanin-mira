@@ -1433,30 +1433,35 @@ section { padding: 80px 0; }
 
 /* Стрелки */
 .team-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-60%);
-  z-index: 10;
-  width: 48px; height: 48px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   border: 2px solid var(--color-accent);
   background: #fff;
   color: var(--color-accent);
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  transition: background 0.2s, color 0.2s, opacity 0.2s;
+  transition: background 0.2s, color 0.2s;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  flex-shrink: 0;
 }
 .team-arrow:hover { background: var(--color-accent); color: #fff; }
-.team-arrow--prev { left: 8px; }
-.team-arrow--next { right: 8px; }
 
-/* Точки */
+/* Точки + стрелки в одну строку */
 .team-dots {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 8px;
   margin-top: 20px;
+  flex: 1;
+}
+.team-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 0 24px;
 }
 .team-dot {
   width: 8px; height: 8px;
