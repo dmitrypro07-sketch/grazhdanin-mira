@@ -337,12 +337,16 @@ section { padding: 80px 0; }
   white-space: nowrap;
 }
 .stat { text-align: center; }
-.stat__num {
+.stat__num-wrap {
   display: block;
+  white-space: nowrap;
+  line-height: 1;
+}
+.stat__num {
+  display: inline;
   font-size: 26px;
   font-weight: 700;
   color: var(--color-accent);
-  line-height: 1;
 }
 .stat__label {
   font-size: 12px;
@@ -351,10 +355,16 @@ section { padding: 80px 0; }
   display: block;
 }
 .stat__num-suffix {
+  display: inline;
   font-size: 26px;
   font-weight: 700;
   color: var(--color-accent);
-  line-height: 1;
+}
+.stat__num-currency {
+  display: block;
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 4px;
 }
 .stat__divider {
   width: 1px;
