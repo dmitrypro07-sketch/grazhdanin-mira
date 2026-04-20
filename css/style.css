@@ -123,7 +123,7 @@ section { padding: 80px 0; }
   justify-content: space-between;
   gap: 24px;
 }
-.header__logo img { height: 52px; transform: scale(1.25); transform-origin: left center; }
+.header__logo img { height: 68px; transform: scale(1.25); transform-origin: left center; }
 .nav {
   display: flex;
   align-items: center;
