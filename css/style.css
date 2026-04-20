@@ -120,7 +120,7 @@ section { padding: 80px 0; }
 }
 .header__inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
   height: 52px;
@@ -128,14 +128,20 @@ section { padding: 80px 0; }
 .header__logo {
   position: relative;
   z-index: 101;
+  align-self: flex-start;
 }
 .header__logo img {
-  height: 80px;
+  height: 96px;
   transform: scale(1.25);
-  transform-origin: left center;
+  transform-origin: left top;
   position: relative;
-  top: 16px;
+  top: 0px;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
+}
+/* Навигация по центру полосы */
+.header__inner .nav,
+.header__inner .nav__link--phone {
+  align-self: center;
 }
 .nav {
   display: flex;
