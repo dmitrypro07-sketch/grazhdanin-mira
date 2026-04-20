@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursor();
   initReviewsSlider();
   initTeamSlider();
+  initCountryCards();
 });
 
 // ===================================
@@ -592,6 +593,30 @@ function initReviewsSlider() {
 
   buildDots();
   goTo(0);
+}
+
+// ===================================
+// COUNTRY CARDS — flip по клику/тапу
+// ===================================
+function initCountryCards() {
+  const cards = document.querySelectorAll('.country-card');
+  if (!cards.length) return;
+  cards.forEach(card => {
+    let startX = 0, startY = 0;
+    card.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    }, { passive: true });
+    card.addEventListener('touchend', e => {
+      const dx = Math.abs(e.changedTouches[0].clientX - startX);
+      const dy = Math.abs(e.changedTouches[0].clientY - startY);
+      if (dx < 10 && dy < 10) card.classList.toggle('flipped');
+    });
+    card.addEventListener('click', e => {
+      if (e.target.closest('a')) return;
+      card.classList.toggle('flipped');
+    });
+  });
 }
 
 // ===================================
