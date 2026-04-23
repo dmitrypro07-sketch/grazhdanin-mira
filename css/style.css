@@ -163,6 +163,17 @@ section { padding: 80px 0; }
   letter-spacing: 0.01em;
 }
 .nav__link--phone:hover { background: transparent; color: var(--color-dark); }
+.nav__phones {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 1.1;
+}
+.nav__phones .nav__link--phone {
+  padding: 2px 10px;
+  font-size: 14px;
+  white-space: nowrap;
+}
 
 /* Бургер */
 .burger {
